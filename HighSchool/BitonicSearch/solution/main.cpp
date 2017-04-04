@@ -66,20 +66,22 @@ void bitonic_search(const int& x, const int& left, const int& right) {
 }
 
 int main() {
-    int N, x;
+    int N, T, x;
 
-    cin >> N >> x;
+    cin >> N;
     v.reserve(N);
     copy(istream_iterator<int>{cin}, istream_iterator<int>{}, back_inserter(v));
 
-    bitonic_search(x, 0, v.size());
-    
-    if (sol.empty()) {
-        cout << "Number not found\n";
-    }
-    else {
-        copy(sol.begin(), sol.end(), ostream_iterator<int>{cout, " "});
-        cout << "\n";
+    for (cin >> T; T; --T) {
+       bitonic_search(x, 0, v.size());
+        
+       if (sol.empty()) cout << "Number not found\n";
+       else {
+         copy(sol.begin(), sol.end(), ostream_iterator<int>{cout, " "});
+         cout << "\n";
+       }
+
+       sol.clear();
     }
 
     return 0;
