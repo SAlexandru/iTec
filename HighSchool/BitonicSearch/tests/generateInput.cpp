@@ -19,9 +19,9 @@ void test1() {
     ofstream out{"input1.in"};
 
     out << "10\n";
-    out << "1 15 21 7 8 9 1 -1 -2 -3\n";
+    out << "1 15 21 27 28 29 1 -1 -2 -3\n";
     out << "11\n";
-    out << "1\n15\n21\n7\n8\n9\n1\n-1\n-2\n-3\n-5";
+    out << "1\n15\n21\n27\n28\n29\n1\n-1\n-2\n-3\n-5";
 
     out.close();
 }
@@ -30,7 +30,7 @@ void test2() {
     ofstream out{"input2.in"};
 
     out << "10\n";
-    out << "-10 6 18 21 22 50 100 7 8 9\n";
+    out << "-10 6 18 21 22 50 100 9 8 7\n";
     out << "11\n";
     out << "1\n-10\n6\n18\n21\n22\n50\n100\n7\n8\n9\n";
 
