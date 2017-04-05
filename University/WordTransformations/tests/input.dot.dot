@@ -1,0 +1,10 @@
+strict graph {
+bna -- ana
+bna -- bma
+ama -- bma
+ama -- ana
+bma -- bna
+bma -- ama
+ana -- bna
+ana -- ama
+}
