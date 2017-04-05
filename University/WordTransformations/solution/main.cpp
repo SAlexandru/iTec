@@ -1,6 +1,8 @@
 #include <queue>
+#include <array>
 #include <vector>
 #include <sstream>
+#include <fstream>
 #include <iostream>
 #include <iterator>
 #include <algorithm>
@@ -8,14 +10,48 @@
 
 using namespace std;
 
-int distance(const string& s, const  string& w) {
-    if (s.size() != w.size()) return -1;
-    int count = 0;
-    for (size_t i = 0; i < s.size(); ++i) {
-        count += s[i] != w[i];
+int iAbs(int x) { return x < 0 ? -x : x;}
+
+void printTo(const string& filename, const unordered_map<string, vector<string>> & v) {
+    ofstream out{filename + ".dot"};
+
+    out << "strict graph {\n";
+    for (const auto& x: v) {
+        for (const auto& y: x.second) {
+            out << x.first << " -- " << y << "\n";
+        }
     }
 
-    return count;
+    out << "}\n";
+
+    out.close();
+}
+
+
+
+int distance(string s, string w) {
+    if (s.size() == w.size()) {
+      int count = 0;
+      for (size_t i = 0; i < s.size(); ++i) {
+          count += s[i] != w[i];
+      }
+      return count;
+    }
+    else if (iAbs(s.size() - w.size()) == 1) {
+        if (w.size() > s.size()) swap(s, w);
+        int count = 0;
+        for (size_t i = 0, j = 0; i < s.size() && count <= 1; ++i) {
+            if (s[i] != w[j]) {
+                ++count;
+            }
+            else ++j;
+        }
+
+        return count;
+    }
+    else {
+        return -1;
+    }
 }
 
 int findPath(unordered_map<string, vector<string>>& G, const string& s, const string& p) {
@@ -42,9 +78,12 @@ int findPath(unordered_map<string, vector<string>>& G, const string& s, const st
 }
 
 void solve() {
+    int N, M;
     unordered_map<string, vector<string>> G;
-    
-    for (string word; cin >> word && word != "*"; ) {
+   
+    cin >> N >> M;
+    for (string word; N; --N) {
+        cin >> word;
         for (const auto& p: G) {
             if (distance(p.first, word) == 1) {
               G[word].push_back(p.first);
@@ -54,9 +93,12 @@ void solve() {
         G[word];
     }
 
-    cin.ignore();
+    printTo("input", G);
 
-    for (string line; getline(cin, line) && line != "";) {
+    cin.ignore();
+    for (string line; M; --M)  {
+       getline(cin, line);
+
        stringstream ss{line};
        string start, end;
 
@@ -67,15 +109,8 @@ void solve() {
 }
 
 int main() {
-    int N;
-    string line;
 
-    cin >> N;
-    getline(cin, line);
-    while (N--) {
-        solve();
-        if (N) cout << "\n";
-    }
+    solve();
 
     return 0;
 }
