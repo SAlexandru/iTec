@@ -13,7 +13,7 @@ using namespace std;
 unsigned seed1 = std::chrono::system_clock::now().time_since_epoch().count();
 std::mt19937 gen (seed1);  // mt19937 is a standard mersenne_twister_engine
 uniform_int_distribution<> NRand(50000, 100000);
-uniform_int_distribution<> numbers(- 1000000000, 1000000000);
+uniform_int_distribution<> numbers(-1000000000, 1000000000);
 
 void test1() {
     ofstream out{"input1.in"};
@@ -36,6 +36,8 @@ void test2() {
 
     out.close();
 }
+
+int abs(int x) { return x < 0 ? -x : x; }
 
 void test3() {
     cout << "--- start test 3 -----\n"; cout.flush();
@@ -60,7 +62,7 @@ void test3() {
         out << x << ' ';
     }
 
-    out << (*v1.begin() + *v2.begin() - 1) << ' ';
+    out << (abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) << ' ';
     for (const auto& x: v2) {
         out << x << ' ';
     }
@@ -71,6 +73,7 @@ void test3() {
     out << gen() << '\n';
 
     cout << "--- stop test 3 -----\n";
+    out.close();
 }
 
 void test4() {
@@ -85,20 +88,19 @@ void test4() {
     
     do {
       v1.insert(numbers(gen));
-    } while (v1.size() != 249);
+    } while (v1.size() != 250);
    
     v2.insert(*next(v1.begin(), 50));
     do {
       v2.insert(numbers(gen));
-    } while (v2.size() != 248);
-
-    out << (v1.size() + v2.size()) << '\n';
+    } while (v2.size() != 249);
 
     for (const auto& x: v1) {
         out << x << ' ';
     }
 
-    out << (*v1.begin() + *v2.begin() - 1) << ' ';
+    out << (abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) << ' ';
+
     for (const auto& x: v2) {
         out << x << ' ';
     }
@@ -110,6 +112,7 @@ void test4() {
     out << gen() << '\n';
 
     cout << "--- stop test 4 -----\n";
+    out.close();
 }
 
 void test5() {
@@ -135,7 +138,8 @@ void test5() {
         out << x << ' ';
     }
 
-    out << (*v1.begin() + *v2.begin() - 1) << ' ';
+    out << (abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) << ' ';
+
     for (const auto& x: v2) {
         out << x << ' ';
     }
@@ -150,6 +154,7 @@ void test5() {
     out << gen() << '\n';
 
     cout << "--- stop test 5 -----\n";
+    out.close();
 }
 
 void test6() {
@@ -158,10 +163,12 @@ void test6() {
     ofstream out{"input6.in"};
 
     int N = NRand(gen);
+
+    if (N % 2) N -= 1;
+
     int M = N >> 1;
 
-    out << N << endl;
-
+    
     set<int> v1;
     vector<int> v;
     set<int, greater<int>> v2;
@@ -174,14 +181,17 @@ void test6() {
       v2.insert(numbers(gen));
     } while (v2.size() != M - 1);
 
+    out << N << endl;
 
     for (const auto& x: v1) {
         out << x << ' ';
         v.push_back(x);
     }
 
-    out << (*v1.begin() + *v2.begin() - 1) << ' ';
-    v.push_back(*v1.begin() + *v2.begin() - 1);
+    out << (abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) << ' ';
+
+    v.push_back(abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1);
+    
     for (const auto& x: v2) {
         out << x << ' ';
         v.push_back(x);
@@ -193,6 +203,8 @@ void test6() {
     out << gen() << '\n';
 
     cout << "--- stop test 6 -----\n";
+
+    out.close();
 }
 
 void test7() {
@@ -247,6 +259,8 @@ void test8() {
     for (int i = 0; i < 1000; ++i) out << v[i] << '\n';
 
     cout << "--- stop test 8 -----\n";
+
+    out.close();
 }
 
 void test9() {
@@ -255,7 +269,11 @@ void test9() {
     ofstream out{"input9.in"};
 
     int N = NRand(gen);
+
+    if (N % 2) N -= 1;
+
     int M = N >> 1;
+
 
     out << N << endl;
 
@@ -277,8 +295,10 @@ void test9() {
         v.push_back(x);
     }
 
-    out << (*v1.begin() + *v2.begin() - 1) << ' ';
-    v.push_back(*v1.begin() + *v2.begin() - 1);
+    out << (abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) << ' ';
+    
+    v.push_back(abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1);
+
     for (const auto& x: v2) {
         out << x << ' ';
         v.push_back(x);
@@ -290,6 +310,7 @@ void test9() {
     out << gen() << '\n';
 
     cout << "--- stop test 9 -----\n";
+    out.close();
 }
 
 void test10() {
@@ -298,9 +319,10 @@ void test10() {
     ofstream out{"input10.in"};
 
     int N = NRand(gen);
+    if (N % 2) N -= 1;
     int M = N >> 1;
 
-    out << N << endl;
+
 
     set<int> v1;
     vector<int> v;
@@ -309,19 +331,23 @@ void test10() {
     do {
       v1.insert(numbers(gen));
     } while (v1.size() != M);
-    
+
     do {
       v2.insert(numbers(gen));
     } while (v2.size() != M - 1);
 
+
+    out << N << endl;    
 
     for (const auto& x: v1) {
         out << x << ' ';
         v.push_back(x);
     }
 
-    out << (*v1.begin() + *v2.begin() - 1) << ' ';
-    v.push_back(*v1.begin() + *v2.begin() - 1);
+    out << (abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) << ' ';
+
+    v.push_back(abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) ;
+
     for (const auto& x: v2) {
         out << x << ' ';
         v.push_back(x);
@@ -333,6 +359,7 @@ void test10() {
     out << gen() << '\n';
 
     cout << "--- stop test 10 -----\n";
+    out.close();
 }
 
 int main() {
