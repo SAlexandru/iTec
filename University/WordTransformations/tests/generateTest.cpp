@@ -72,15 +72,11 @@ void test2() {
     v.push_back("vvv");  
     v.push_back("beric"); 
 
-    int count = 0;
-
     for (size_t i = 0; i < v.size(); ++i) {
         for (size_t j = i + 1; j < v.size(); ++j) {
             out << v[i] << ' ' << v[j] << '\n';
-            count++;
         }
     }
-    cout << count;
 
     cout << " --- stop test 2 --- \n";
 
@@ -296,6 +292,72 @@ void test9() { //circle
     cout << " --- start test 9 --- \n";
     ofstream out {"input9.in"};
 
+    vector<string> v;
+    vector<string> pattern1, pattern2;
+
+    pattern1.push_back("ford");
+    pattern1.push_back("fork");
+    pattern1.push_back("foak");
+    pattern1.push_back("fooak");
+    pattern1.push_back("fooad");
+    pattern1.push_back("forad"); 
+    pattern1.push_back("foopk");
+    pattern1.push_back("fopk");
+    pattern1.push_back("foopk"); 
+
+    pattern2.push_back("ana");
+    pattern2.push_back("bna");
+    pattern2.push_back("bma");
+    pattern2.push_back("ama");
+    pattern2.push_back("ana");
+    pattern2.push_back("anc");
+    pattern2.push_back("anna");
+    pattern2.push_back("annc");
+
+    v.insert(v.begin(), pattern1.begin(), pattern1.end());
+    v.insert(v.begin(), pattern2.begin(), pattern2.end());
+
+    while (v.size() <= 1000) {
+        for (int j = 0; j < 4; ++j) {
+            for (char c = 'a'; c <= 'z'; ++c) {
+                for (size_t i = 0; i < pattern1.size(); ++i) {
+                    string s = pattern1[i];
+                    s[j] = c; 
+                    v.push_back(s);
+                }
+            }
+        }
+        for (int j = 0; j < 3; ++j) {
+            for (char c = 'a'; c <= 'z'; ++c) {
+                for (size_t i = 0; i < pattern2.size(); ++i) {
+                    string s = pattern2[i];
+                    s[j] = c; 
+                    v.push_back(s);
+                }
+            }
+        }
+    }
+
+    random_shuffle(v.begin(), v.end());
+    out << "1000 1000\n";
+    for (int i = 0; i < 1000; ++i) {
+        out << v[i] << '\n';
+    }
+
+  vector<pair<string, string>> q;
+    for (int i = 0; i < v.size(); ++i) {
+        for (int j = i + 1; j < v.size(); ++j) {
+            q.emplace_back(v[i], v[j]);
+        }
+    }
+
+    random_shuffle(q.begin(), q.end());
+    for (int i = 0; i < 1000; ++i) {
+        out << q[i].first << ' ' << q[i].second << '\n';
+    }
+
+   
+
     cout << " --- stop test 9 --- \n";
 
     out.close();
@@ -304,6 +366,43 @@ void test9() { //circle
 void test10() { //circle
     cout << " --- start test 10 --- \n";
     ofstream out {"input10.in"};
+
+    string s = "zyxwvutrpo";
+
+    vector<string> v;
+
+    while (s.size() > 1) {
+        for (int i = 0; i < 10; ++i) {
+            string ss = s;
+            for (char c = 'k'; c <= 'w'; ++c) {
+                ss[i] = c;
+                v.push_back(ss);
+            }
+        }
+        s.erase(s.begin() + NRand(gen) % s.size());
+    }
+
+    v.push_back(s);
+
+
+    random_shuffle(v.begin(), v.end());
+    out << "1000 1000\n";
+    for (int i = 0; i < 1000; ++i) {
+        out << v[i] << '\n';
+    }
+
+  vector<pair<string, string>> q;
+    for (int i = 0; i < v.size(); ++i) {
+        for (int j = i + 1; j < v.size(); ++j) {
+            q.emplace_back(v[i], v[j]);
+        }
+    }
+
+    random_shuffle(q.begin(), q.end());
+    for (int i = 0; i < 1000; ++i) {
+        out << q[i].first << ' ' << q[i].second << '\n';
+    }
+
 
     cout << " --- stop test 10 --- \n";
 
