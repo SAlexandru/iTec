@@ -6,6 +6,7 @@
 #include <iostream>
 #include <iterator>
 #include <algorithm>
+#include <cassert>
 #include <unordered_map>
 
 using namespace std;
@@ -16,7 +17,12 @@ void printTo(const string& filename, const unordered_map<string, vector<string>>
     ofstream out{filename + ".dot"};
 
     out << "strict graph {\n";
+    out << "    graph [splines=true overlap=false layout=sfdp];\n";
+//    out << "    node [shape=none];\n";
     for (const auto& x: v) {
+        if (x.second.empty()) {
+            out << x.first << "\n";
+        }
         for (const auto& y: x.second) {
             out << x.first << " -- " << y << "\n";
         }
@@ -82,15 +88,25 @@ void solve() {
     unordered_map<string, vector<string>> G;
    
     cin >> N >> M;
+    assert(1 <= N && N <= 1000);
+    assert(1 <= M && M <= 1000);
     for (string word; N; --N) {
         cin >> word;
-        for (const auto& p: G) {
-            if (distance(p.first, word) == 1) {
-              G[word].push_back(p.first);
-              G[p.first].push_back(word);
-            }
+        assert(1 <= word.size() && word.size() <= 10);
+        for(const auto& x: word) {
+            assert(x >= 'a' && x <= 'z');
         }
-        G[word];
+
+        if (G.find(word) == G.end()) {
+          G[word] = vector<string>(); 
+          for (const auto& p: G) {
+                if ( distance(p.first, word) == 1) {
+                  G[word].push_back(p.first);
+                  G[p.first].push_back(word);
+                }
+          }
+        }
+
     }
 
     printTo("input", G);
@@ -103,6 +119,17 @@ void solve() {
        string start, end;
 
        ss >> start >> end;
+       assert(1 <= start.size() && start.size() <= 10);
+       assert(1 <= end.size() && end.size() <= 10);
+        for(const auto& x: start) {
+            assert(x >= 'a' && x <= 'z');
+        }
+        for(const auto& x: end) {
+            assert(x >= 'a' && x <= 'z');
+        }
+
+
+
 
        cout << start << ' ' << end << ' ' << findPath(G, start, end) << '\n';
     }
