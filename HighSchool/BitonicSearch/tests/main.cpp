@@ -75,7 +75,7 @@ void bitonic_search(const int& x, int left, int right) {
 }
 
 void is_bitonic(const vector<int>& v) {
-    assert(v.size() <= 100000);
+    assert(v.size() <= 500000);
     assert(v.size() >= 3);
 
     int pivot = 0;
@@ -110,6 +110,7 @@ int main() {
     int N, T, x;
 
     cin >> N;
+
     while(N--) {
         cin >> x;
         v.push_back(x);
@@ -119,7 +120,7 @@ int main() {
 
     cin >> T;
     assert(T >= 1);
-    assert(T <= 1000);
+    assert(T <= 10000);
     while (T--) {
         cin >> x;
         bitonic_search(x, 0, v.size());

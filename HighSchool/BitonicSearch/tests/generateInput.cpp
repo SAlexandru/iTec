@@ -12,7 +12,7 @@ using namespace std;
 
 unsigned seed1 = std::chrono::system_clock::now().time_since_epoch().count();
 std::mt19937 gen (seed1);  // mt19937 is a standard mersenne_twister_engine
-uniform_int_distribution<> NRand(50000, 100000);
+uniform_int_distribution<> NRand(250000, 500000);
 uniform_int_distribution<> numbers(-1000000000, 1000000000);
 
 void test1() {
@@ -81,35 +81,37 @@ void test4() {
 
     ofstream out{"input4.in"};
 
-    out << "500\n";
+    out << "100000\n";
 
     set<int> v1;
+    vector<int> v;
     set<int, greater<int>> v2;
     
     do {
       v1.insert(numbers(gen));
-    } while (v1.size() != 250);
+    } while (v1.size() != 50000);
    
     v2.insert(*next(v1.begin(), 50));
     do {
       v2.insert(numbers(gen));
-    } while (v2.size() != 249);
+    } while (v2.size() != 49999);
 
     for (const auto& x: v1) {
         out << x << ' ';
+        v.push_back(x);
     }
 
     out << (abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) << ' ';
 
     for (const auto& x: v2) {
         out << x << ' ';
+        v.push_back(x);
     }
 
-    out << "\n" << (v1.size() + v2.size() + 1) << '\n';
-    for (const auto& x: v1) out << x << '\n';
-    for (const auto& x: v2) out << x << '\n';
+    out << "\n10000\n";
+    random_shuffle(v.begin(), v.end());
+    for (int i = 0; i < 10000; ++i) out << v[i] << '\n';
 
-    out << gen() << '\n';
 
     cout << "--- stop test 4 -----\n";
     out.close();
@@ -120,38 +122,37 @@ void test5() {
 
     ofstream out{"input5.in"};
 
-    out << "1000\n";
+    out << "200000\n";
 
     set<int> v1;
+    vector<int> v;
     set<int, greater<int>> v2;
     
     do {
       v1.insert(numbers(gen));
-    } while (v1.size() != 500);
+    } while (v1.size() != 100000);
     
     do {
       v2.insert(numbers(gen));
-    } while (v2.size() != 499);
+    } while (v2.size() != 99999);
 
 
     for (const auto& x: v1) {
         out << x << ' ';
+        v.push_back(x);
     }
 
     out << (abs(*prev(v1.end(), 1)) + abs(*v2.begin())  - 1) << ' ';
 
     for (const auto& x: v2) {
         out << x << ' ';
+        v.push_back(x);
     }
 
-    out << "\n500\n";
-    for (const auto& x: v1) {
-        out << x << '\n';
-    }
-    for (const auto& x: v2) {
-        out << x << '\n';
-    }
-    out << gen() << '\n';
+    out << "\n10000\n";
+    for (int i = 0; i < 10000; ++i) v.push_back(gen());
+    random_shuffle(v.begin(), v.end());
+    for (int i = 0; i < 10000; ++i) out << v[i] << '\n';
 
     cout << "--- stop test 5 -----\n";
     out.close();
@@ -198,8 +199,8 @@ void test6() {
     }
 
     random_shuffle(v.begin(), v.end());
-    out << "\n1000\n";
-    for (int i = 0; i < 999; ++i) out << v[i] << '\n';
+    out << "\n10000\n";
+    for (int i = 0; i < 9999; ++i) out << v[i] << '\n';
     out << gen() << '\n';
 
     cout << "--- stop test 6 -----\n";
@@ -212,22 +213,22 @@ void test7() {
 
     ofstream out{"input7.in"};
 
-    int N = 100000;
+    int N = 500000;
 
     out << N << endl;
 
     vector<int> v;
 
-    for (int i = 1; i <= 50000; ++i) {
+    for (int i = 1; i <= 250000; ++i) {
         out << i << ' ';
     }
-    for (int i = 49999; i >= 0; --i) {
+    for (int i = 249999; i >= 0; --i) {
         out << i << ' ';
     }
 
-    out << "\n1000\n";
-    for (int i = 0; i < 500; ++i) out << gen() << '\n';
-    for (int i = 0; i < 500; ++i) out << i << '\n';
+    out << "\n10000\n";
+    for (int i = 0; i < 5000; ++i) out << gen() << '\n';
+    for (int i = 0; i < 5000; ++i) out << i << '\n';
 
     cout << "--- stop test 7 -----\n";
 
@@ -239,24 +240,24 @@ void test8() {
 
     ofstream out{"input8.in"};
 
-    int N = 100000;
+    int N = 500000;
 
     out << N << endl;
 
     vector<int> v;
 
-    for (int i = 1; i <= 50000; ++i) {
+    for (int i = 1; i <= 250000; ++i) {
         out << (i + 500000) << ' ';
         v.push_back(i + 500000);
     }
-    for (int i = 49999; i >= 0; --i) {
+    for (int i = 249999; i >= 0; --i) {
         out << (i - 50000) << ' ';
         v.push_back(i - 500000);
     }
 
-    out << "\n1000\n";
+    out << "\n10000\n";
     random_shuffle(v.begin(), v.end());
-    for (int i = 0; i < 1000; ++i) out << v[i] << '\n';
+    for (int i = 0; i < 10000; ++i) out << v[i] << '\n';
 
     cout << "--- stop test 8 -----\n";
 
@@ -305,8 +306,8 @@ void test9() {
     }
 
     random_shuffle(v.begin(), v.end());
-    out << "\n1000\n";
-    for (int i = 0; i < 999; ++i) out << v[i] << '\n';
+    out << "\n10000\n";
+    for (int i = 0; i < 9999; ++i) out << v[i] << '\n';
     out << gen() << '\n';
 
     cout << "--- stop test 9 -----\n";
@@ -354,8 +355,8 @@ void test10() {
     }
 
     random_shuffle(v.begin(), v.end());
-    out << "\n1000\n";
-    for (int i = 0; i < 999; ++i) out << v[i] << '\n';
+    out << "\n10000\n";
+    for (int i = 0; i < 9999; ++i) out << v[i] << '\n';
     out << gen() << '\n';
 
     cout << "--- stop test 10 -----\n";
