@@ -36,12 +36,47 @@ void test1() { //circle
 void test2() { //circle
     cout << " --- start test 2 --- \n";
     ofstream out {"input2.in"};
+    vector<string> v;
 
-    out << " \n";
-    out << "ana\nbna\nbma\nama\nana\n";
-    out << "anc\nanna\nannc\n";
-    out << "ford\nfork\nfoak\nboak\nbook\nbord\n";
+    out << "20 171\n";
+    out << "ana\nbna\nbma\nama\nana\n"; //5
+    out << "anc\nanna\nannc\n"; // 3
+    out << "ford\nfork\nfoak\nfooak\nfooad\nforad\n"; // 6
+    out << "fopak\nfopk\nfoopk\n"; // 3
+    out << "zzz\nzxz\nzyz\n"; // 3
+    out << "vwt\nvwv\nvvv\n"; // 3 
+    out << "beric\n"; // 1
 
+    v.push_back("ana");
+    v.push_back("bna");
+    v.push_back("bma");
+    v.push_back("ama");
+    v.push_back("ana");
+    v.push_back("anc");
+    v.push_back("anna");
+    v.push_back("annc");
+    v.push_back("ford");
+    v.push_back("fork");
+    v.push_back("foak");
+    v.push_back("fooak");
+    v.push_back("fooad");
+    v.push_back("forad"); 
+    v.push_back("fopak");
+    v.push_back("fopk");
+    v.push_back("foopk"); 
+    v.push_back("zzz");
+    v.push_back("zxz");
+    v.push_back("zyz"); 
+    v.push_back("vwt");
+    v.push_back("vwv");
+    v.push_back("vvv");  
+    v.push_back("beric"); 
+
+    for (size_t i = 0; i < v.size(); ++i) {
+        for (size_t j = i + 1; j < v.size(); ++j) {
+            out << v[i] << ' ' << v[j] << '\n';
+        }
+    }
 
     cout << " --- stop test 2 --- \n";
 
@@ -52,14 +87,6 @@ void test3() { //circle
     cout << " --- start test 3 --- \n";
     ofstream out {"input3.in"};
 
-    out << "4 6\n";
-    out << "ana\nbna\nbma\nama\n";
-    out << "ana bna\n";
-    out << "ana ama\n";
-    out << "ana bma\n";
-    out << "bna bma\n";
-    out << "bna ama\n";
-    out << "bma ama\n";
 
     cout << " --- stop test 3 --- \n";
 
@@ -70,14 +97,6 @@ void test4() { //circle
     cout << " --- start test 4 --- \n";
     ofstream out {"input4.in"};
 
-    out << "4 6\n";
-    out << "ana\nbna\nbma\nama\n";
-    out << "ana bna\n";
-    out << "ana ama\n";
-    out << "ana bma\n";
-    out << "bna bma\n";
-    out << "bna ama\n";
-    out << "bma ama\n";
 
     cout << " --- stop test 4 --- \n";
 
@@ -88,15 +107,6 @@ void test5() { //circle
     cout << " --- start test 5 --- \n";
     ofstream out {"input5.in"};
 
-    out << "4 6\n";
-    out << "ana\nbna\nbma\nama\n";
-    out << "ana bna\n";
-    out << "ana ama\n";
-    out << "ana bma\n";
-    out << "bna bma\n";
-    out << "bna ama\n";
-    out << "bma ama\n";
-
     cout << " --- stop test 5 --- \n";
 
     out.close();
@@ -106,14 +116,6 @@ void test6() { //circle
     cout << " --- start test 6 --- \n";
     ofstream out {"input6.in"};
 
-    out << "4 6\n";
-    out << "ana\nbna\nbma\nama\n";
-    out << "ana bna\n";
-    out << "ana ama\n";
-    out << "ana bma\n";
-    out << "bna bma\n";
-    out << "bna ama\n";
-    out << "bma ama\n";
 
     cout << " --- stop test 6 --- \n";
 
@@ -124,15 +126,6 @@ void test7() { //circle
     cout << " --- start test 7 --- \n";
     ofstream out {"input7.in"};
 
-    out << "4 6\n";
-    out << "ana\nbna\nbma\nama\n";
-    out << "ana bna\n";
-    out << "ana ama\n";
-    out << "ana bma\n";
-    out << "bna bma\n";
-    out << "bna ama\n";
-    out << "bma ama\n";
-
     cout << " --- stop test 7 --- \n";
 
     out.close();
@@ -141,15 +134,6 @@ void test7() { //circle
 void test8() { //circle
     cout << " --- start test 8 --- \n";
     ofstream out {"input8.in"};
-
-    out << "4 6\n";
-    out << "ana\nbna\nbma\nama\n";
-    out << "ana bna\n";
-    out << "ana ama\n";
-    out << "ana bma\n";
-    out << "bna bma\n";
-    out << "bna ama\n";
-    out << "bma ama\n";
 
     cout << " --- stop test 8 --- \n";
 
@@ -160,15 +144,6 @@ void test9() { //circle
     cout << " --- start test 9 --- \n";
     ofstream out {"input9.in"};
 
-    out << "4 6\n";
-    out << "ana\nbna\nbma\nama\n";
-    out << "ana bna\n";
-    out << "ana ama\n";
-    out << "ana bma\n";
-    out << "bna bma\n";
-    out << "bna ama\n";
-    out << "bma ama\n";
-
     cout << " --- stop test 9 --- \n";
 
     out.close();
@@ -177,15 +152,6 @@ void test9() { //circle
 void test10() { //circle
     cout << " --- start test 10 --- \n";
     ofstream out {"input10.in"};
-
-    out << "4 6\n";
-    out << "ana\nbna\nbma\nama\n";
-    out << "ana bna\n";
-    out << "ana ama\n";
-    out << "ana bma\n";
-    out << "bna bma\n";
-    out << "bna ama\n";
-    out << "bma ama\n";
 
     cout << " --- stop test 10 --- \n";
 
