@@ -119,6 +119,8 @@ int main() {
     is_bitonic(v);
 
     cin >> T;
+    assert(T >= 1);
+    assert(T <= 1000);
     while (T--) {
         cin >> x;
         bitonic_search(x, 0, v.size());
