@@ -1,4 +1,4 @@
-20 171
+24 253
 ana
 bna
 bma
@@ -13,7 +13,7 @@ foak
 fooak
 fooad
 forad
-fopak
+foopk
 fopk
 foopk
 zzz
@@ -36,7 +36,7 @@ ana foak
 ana fooak
 ana fooad
 ana forad
-ana fopak
+ana foopk
 ana fopk
 ana foopk
 ana zzz
@@ -58,7 +58,7 @@ bna foak
 bna fooak
 bna fooad
 bna forad
-bna fopak
+bna foopk
 bna fopk
 bna foopk
 bna zzz
@@ -79,7 +79,7 @@ bma foak
 bma fooak
 bma fooad
 bma forad
-bma fopak
+bma foopk
 bma fopk
 bma foopk
 bma zzz
@@ -99,7 +99,7 @@ ama foak
 ama fooak
 ama fooad
 ama forad
-ama fopak
+ama foopk
 ama fopk
 ama foopk
 ama zzz
@@ -118,7 +118,7 @@ ana foak
 ana fooak
 ana fooad
 ana forad
-ana fopak
+ana foopk
 ana fopk
 ana foopk
 ana zzz
@@ -136,7 +136,7 @@ anc foak
 anc fooak
 anc fooad
 anc forad
-anc fopak
+anc foopk
 anc fopk
 anc foopk
 anc zzz
@@ -153,7 +153,7 @@ anna foak
 anna fooak
 anna fooad
 anna forad
-anna fopak
+anna foopk
 anna fopk
 anna foopk
 anna zzz
@@ -169,7 +169,7 @@ annc foak
 annc fooak
 annc fooad
 annc forad
-annc fopak
+annc foopk
 annc fopk
 annc foopk
 annc zzz
@@ -184,7 +184,7 @@ ford foak
 ford fooak
 ford fooad
 ford forad
-ford fopak
+ford foopk
 ford fopk
 ford foopk
 ford zzz
@@ -198,7 +198,7 @@ fork foak
 fork fooak
 fork fooad
 fork forad
-fork fopak
+fork foopk
 fork fopk
 fork foopk
 fork zzz
@@ -211,7 +211,7 @@ fork beric
 foak fooak
 foak fooad
 foak forad
-foak fopak
+foak foopk
 foak fopk
 foak foopk
 foak zzz
@@ -223,7 +223,7 @@ foak vvv
 foak beric
 fooak fooad
 fooak forad
-fooak fopak
+fooak foopk
 fooak fopk
 fooak foopk
 fooak zzz
@@ -234,7 +234,7 @@ fooak vwv
 fooak vvv
 fooak beric
 fooad forad
-fooad fopak
+fooad foopk
 fooad fopk
 fooad foopk
 fooad zzz
@@ -244,7 +244,7 @@ fooad vwt
 fooad vwv
 fooad vvv
 fooad beric
-forad fopak
+forad foopk
 forad fopk
 forad foopk
 forad zzz
@@ -254,15 +254,15 @@ forad vwt
 forad vwv
 forad vvv
 forad beric
-fopak fopk
-fopak foopk
-fopak zzz
-fopak zxz
-fopak zyz
-fopak vwt
-fopak vwv
-fopak vvv
-fopak beric
+foopk fopk
+foopk foopk
+foopk zzz
+foopk zxz
+foopk zyz
+foopk vwt
+foopk vwv
+foopk vvv
+foopk beric
 fopk foopk
 fopk zzz
 fopk zxz

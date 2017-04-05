@@ -38,11 +38,11 @@ void test2() { //circle
     ofstream out {"input2.in"};
     vector<string> v;
 
-    out << "20 171\n";
+    out << "24 276\n";
     out << "ana\nbna\nbma\nama\nana\n"; //5
     out << "anc\nanna\nannc\n"; // 3
     out << "ford\nfork\nfoak\nfooak\nfooad\nforad\n"; // 6
-    out << "fopak\nfopk\nfoopk\n"; // 3
+    out << "foopk\nfopk\nfoopk\n"; // 3
     out << "zzz\nzxz\nzyz\n"; // 3
     out << "vwt\nvwv\nvvv\n"; // 3 
     out << "beric\n"; // 1
@@ -61,7 +61,7 @@ void test2() { //circle
     v.push_back("fooak");
     v.push_back("fooad");
     v.push_back("forad"); 
-    v.push_back("fopak");
+    v.push_back("foopk");
     v.push_back("fopk");
     v.push_back("foopk"); 
     v.push_back("zzz");
@@ -72,11 +72,15 @@ void test2() { //circle
     v.push_back("vvv");  
     v.push_back("beric"); 
 
+    int count = 0;
+
     for (size_t i = 0; i < v.size(); ++i) {
         for (size_t j = i + 1; j < v.size(); ++j) {
             out << v[i] << ' ' << v[j] << '\n';
+            count++;
         }
     }
+    cout << count;
 
     cout << " --- stop test 2 --- \n";
 

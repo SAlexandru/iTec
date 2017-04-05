@@ -1,20 +1,23 @@
 strict graph {
+vwv -- vwt
+vwv -- vvv
+vwt -- vwv
 zyz -- zxz
 zyz -- zzz
 zxz -- zzz
 zxz -- zyz
 foopk -- fooak
 foopk -- fopk
-fopak -- fooak
-fopak -- foak
-fopak -- fopk
+foopk -- fooak
+foopk -- fopk
 forad -- fooad
 forad -- ford
+vvv -- vwv
 fooad -- fooak
 fooad -- forad
 fooak -- foak
 fooak -- fooad
-fooak -- fopak
+fooak -- foopk
 fooak -- foopk
 bna -- ana
 bna -- bma
@@ -29,7 +32,7 @@ fork -- foak
 fork -- fopk
 zzz -- zxz
 zzz -- zyz
-fopk -- fopak
+fopk -- foopk
 fopk -- fork
 fopk -- foak
 fopk -- foopk
@@ -49,6 +52,5 @@ anc -- ana
 anc -- annc
 foak -- fork
 foak -- fooak
-foak -- fopak
 foak -- fopk
 }
