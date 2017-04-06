@@ -15,6 +15,30 @@ random_device rd;
 mt19937 gen(rd());
 uniform_int_distribution<> NRand(50, 100), MRand(100, 50 * 99);
 
+vector<pair<string, string>> generatePairs(vector<string> v) {
+    cout << "generating pairs\n"; cout.flush();
+    sort(v.begin(), v.end());
+    vector<pair<int, int>> pairsIdx;
+    for (int i = 0; i < v.size(); ++i) {
+        for (int j = i + 1; j < v.size(); ++j) {
+            pairsIdx.emplace_back(i, j);
+        }
+    }
+    sort(pairsIdx.begin(), pairsIdx.end(), [](const pair<int, int>& x, const pair<int, int>& y) {
+            int diff1 = x.second - x.first;
+            int diff2 = y.second - y.first;
+            return diff1 > diff2;
+    });
+    vector<pair<string, string>> pairs;
+    for (const auto& x: pairsIdx) {
+        pairs.emplace_back(v[x.first], v[x.second]);
+    }
+
+    cout << "done generating pairs\n"; cout.flush();
+
+    return pairs;
+}
+
 void test1() { //circle
     cout << " --- start test 1 --- \n";
     ofstream out {"input1.in"};
@@ -152,11 +176,12 @@ void test4() {
 
     out << v.size() << " 1000\n";
     copy(v.begin(), v.end(), ostream_iterator<string>{out, "\n"});
-    vector<pair<string, string>> q;
-    for (int i = 0; i < v.size(); ++i) {
-        for (int j = i + 1; j < v.size(); ++j) {
-            q.emplace_back(v[i], v[j]);
-        }
+    vector<pair<string, string>> q = generatePairs(v);
+
+    if (q.size() > 1000) {
+        cout << "resize to 1000\n"; cout.flush();
+      q.resize(1000);
+      cout << "done resize\n"; cout.flush();
     }
 
     random_shuffle(q.begin(), q.end());
@@ -195,11 +220,11 @@ void test5() { //circle
 
     out << v.size() << " 1000\n";
     copy(v.begin(), v.end(), ostream_iterator<string>{out, "\n"});
-    vector<pair<string, string>> q;
-    for (int i = 0; i < v.size(); ++i) {
-        for (int j = i + 1; j < v.size(); ++j) {
-            q.emplace_back(v[i], v[j]);
-        }
+
+    vector<pair<string, string>> q = generatePairs(v);
+
+    if (q.size() > 1000) {
+        q.resize(1000);
     }
 
     random_shuffle(q.begin(), q.end());
@@ -247,7 +272,7 @@ void test6() {
 void test7() {
     cout << " --- start test 7 --- \n";
     ofstream out {"input7.in"};
-    uniform_int_distribution<> chRand(0, 25), NRand(9, 10);
+    uniform_int_distribution<> chRand(0, 25), NRand(4, 5);
 
     vector<string> v;
     do {
@@ -266,6 +291,8 @@ void test7() {
             q.emplace_back(v[i], v[j]);
         }
     }
+
+    random_shuffle(q.begin(), q.end());
 
     for (int i = 0; i < 1000; ++i) out << q[i].first << ' ' << q[i].second << '\n';
 
@@ -344,11 +371,10 @@ void test9() { //circle
         out << v[i] << '\n';
     }
 
-  vector<pair<string, string>> q;
-    for (int i = 0; i < v.size(); ++i) {
-        for (int j = i + 1; j < v.size(); ++j) {
-            q.emplace_back(v[i], v[j]);
-        }
+    vector<pair<string, string>> q = generatePairs(v);
+
+    if (q.size() > 1000) {
+        q.resize(1000);
     }
 
     random_shuffle(q.begin(), q.end());
@@ -391,11 +417,10 @@ void test10() { //circle
         out << v[i] << '\n';
     }
 
-  vector<pair<string, string>> q;
-    for (int i = 0; i < v.size(); ++i) {
-        for (int j = i + 1; j < v.size(); ++j) {
-            q.emplace_back(v[i], v[j]);
-        }
+    vector<pair<string, string>> q = generatePairs(v);
+
+    if (q.size() > 1000) {
+        q.resize(1000);
     }
 
     random_shuffle(q.begin(), q.end());
