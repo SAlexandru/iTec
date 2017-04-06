@@ -1,11 +1,11 @@
 strict graph {
     graph [splines=true overlap=false layout=sfdp];
-ama -- ana
-ama -- bma
-ana -- bna
-ana -- ama
-bma -- bna
-bma -- ama
 bna -- ana
 bna -- bma
+ama -- bma
+ama -- ana
+bma -- bna
+bma -- ama
+ana -- bna
+ana -- ama
 }

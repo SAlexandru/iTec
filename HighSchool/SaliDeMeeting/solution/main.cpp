@@ -17,9 +17,9 @@ int main() {
         int x, y;
         cin >> x >> y;
 
-        assert(x <= y);
-        v.push_back({x, 1});
-        v.push_back({y, 2});
+        assert(x < y);
+        v.push_back({x, 2});
+        v.push_back({y, 1});
     }
 
     sort(v.begin(), v.end());
@@ -27,7 +27,7 @@ int main() {
     int count = 0, sol = 0;
 
     for (const auto& x: v) {
-        if (x.second == 1) ++count;
+        if (x.second == 2) ++count;
         else --count;
         sol = max(count, sol);
     }
