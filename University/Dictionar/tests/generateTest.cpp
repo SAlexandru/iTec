@@ -272,7 +272,7 @@ void test6() {
 void test7() {
     cout << " --- start test 7 --- \n";
     ofstream out {"input7.in"};
-    uniform_int_distribution<> chRand(0, 25), NRand(4, 5);
+    uniform_int_distribution<> chRand(0, 10), NRand(4, 5);
 
     vector<string> v;
     do {
@@ -437,16 +437,20 @@ void test10() { //circle
 
 
 int main() {
+    /*
     test1();
     test2();
     test3();
     test4();
     test5();
     test6();
+    */
     test7();
+    /*
     test8();
     test9();
     test10();
+    */
 
     return 0;
 }
