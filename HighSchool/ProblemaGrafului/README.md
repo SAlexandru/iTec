@@ -27,10 +27,8 @@ Grafurile de la i = 1, 6
 
 ![graf liniar cu 3 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph3.png?token=AC9vRUDddSkrr4jlcXCu9NHHvf3iKgQqks5Y8ILIwA%3D%3D)
 
-![graf liniar cu 4 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph4.png?token=AC9vRXZjiS2oj2liv3Vv72C6XG1c2ijHks5Y8ILZwA%3D%3D
+![graf liniar cu 4 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph4.png?token=AC9vRXZjiS2oj2liv3Vv72C6XG1c2ijHks5Y8ILZwA%3D%3D)
 
-
-)
 ![graf liniar cu 5 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph5.png?token=AC9vRfadDJCfHg15J4Cy4W0LA2DKThPlks5Y8ILswA%3D%3D)
 
 ![graf liniar cu 6 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph6.png?token=AC9vRZD-dzc-LS1WJ12Ah9ecqbPU2ccuks5Y8IL4wA%3D%3D)
