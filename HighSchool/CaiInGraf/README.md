@@ -14,7 +14,7 @@ nodurile si muchiile din graf. Fisierul trebuie scris in limbajul [dot](http://w
 Pentru testele noastre fisierele .dot se gasesc in in folderul test/dotFiles.  
 
 ![test 1 graph](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/CaiInGraf/tests/picturesOfTheGraphs/graph1.png?token=AC9vRbCV2lc1_j-sV6MJfRbmSHWmGTXgks5Y8HrfwA%3D%3D)
-![test 2 graph](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/CaiInGraf/tests/picturesOfTheGraphs/graph2.png?token=AC9vRbCV2lc1_j-sV6MJfRbmSHWmGTXgks5Y8HrfwA%3D%3D
+![test 2 graph](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/CaiInGraf/tests/picturesOfTheGraphs/graph2.png?token=AC9vRbCV2lc1_j-sV6MJfRbmSHWmGTXgks5Y8HrfwA%3D%3D)
 
 
 
