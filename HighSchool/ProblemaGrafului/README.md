@@ -48,7 +48,7 @@ multimiile pentru i = 5 este elementul 5 care se gaseste la 2 noduri distance de
 
 De ce multimiile noi create sunt valide ?  Acest lucru va las tema de casa.
 
-Insa nu am terminat ! Un lucru pe care il observa este faptul ca noi multimi nu au elmentul 6, acesta a fost "pierdut". 
+Insa nu am terminat ! Un lucru pe care il observam este faptul ca noi multimi nu au elmentul 6, acesta a fost "pierdut". 
 Pentru a genera multimi care contin elementul 6 si sunt valide pentru i = 7 trebuie sa ne uitam la multimiile pentru
 i = 4.   {1, 4}, {2, 4} si {1, 3} la toate putem adauga elementul 6 si devin valide. De ce ? Again, homework for you :).
 
