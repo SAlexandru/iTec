@@ -1,11 +1,12 @@
-##Problema Grafului
+## Problema Grafului
 
 Problema original se poate gasit pe [uva](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2010)
 
 Aceasta problema se rezolva prin programare dinamica.
 Vom nota cu dp[i] = numarul de multimi ce se pot forma pentru un graf care are i noduri. Nodurile sunt 1, 2, 3, .., i.
 Specific programari dinamice, vom considera toate raspunsurile de la 1 pana la i - 1 ca fiind deja calculate. 
-Singurul lucru ce trebuie sa-l facem e sa gasim o relatie intre dp[i] si dp[i - 1], dp[i - 2], .. dp[1].
+Singurul lucru ce trebuie sa-l facem e sa gasim o relatie intre dp[i] si dp[i - 1], dp[i - 2], .. dp[1]
+.
 
 Cel mai simplu este sa analizam un exemplu. 
 Consideram ca stim raspunsurile pentru i = 1, 2, 3, 4, 5, 6. 
@@ -19,15 +20,20 @@ Pentru i = 1 raspunsul este 1. Avem doar multimea {1}
        i = 6 raspunsul este 5. Avem multimiile {1, 4, 6}, {2, 4, 6}, {1, 3, 6}, {2, 5}, {1, 3, 5}
 
 Grafurile de la i = 1, 6
+
 ![graf liniar cu 1 nod](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph1.png?token=AC9vRcDiA25jqNc9CB29zFIMxPV-GR7Nks5Y8IJ_wA%3D%3D)
 ![graf liniar cu 2 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph2.png?token=AC9vRce6b-GgMvebpC-03DhOO0AxYTCUks5Y8IKWwA%3D%3D)
 ![graf liniar cu 3 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph3.png?token=AC9vRUDddSkrr4jlcXCu9NHHvf3iKgQqks5Y8ILIwA%3D%3D)
-![graf liniar cu 4 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph4.png?token=AC9vRXZjiS2oj2liv3Vv72C6XG1c2ijHks5Y8ILZwA%3D%3D)
+![graf liniar cu 4 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph4.png?token=AC9vRXZjiS2oj2liv3Vv72C6XG1c2ijHks5Y8ILZwA%3D%3D
+
+
+)
 ![graf liniar cu 5 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph5.png?token=AC9vRfadDJCfHg15J4Cy4W0LA2DKThPlks5Y8ILswA%3D%3D)
 ![graf liniar cu 6 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph6.png?token=AC9vRZD-dzc-LS1WJ12Ah9ecqbPU2ccuks5Y8IL4wA%3D%3D)
        
 Pentru graful i = 7 
 Avem poza: ![graf liniar cu 7 noduri](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/ProblemaGrafului/graph7.png?token=AC9vRahnDiPQ07Gl-oxIJS5NSHzFD0_zks5Y8IMGwA%3D%3D)
+
 Un lucru de observat este ca nu toate multimile de la i = 6 sunt raspunsuri pentru i = 7.
 Un alt lucru de observat este faptul ca toate multimiile pentru un in contin fie elementul i fie elementul i - 1
 
