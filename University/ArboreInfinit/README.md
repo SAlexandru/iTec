@@ -36,10 +36,12 @@ in biti setati / nesetati de la dreapta la stanga. Astefl parintele comun a celo
 comuni de la stanga la dreapta. 
 
 De exemplu a = 13 (000..1101) si b = 9 (000..1001)
+
 Cele doua numere nu au decat un bit in comun  000...1000 = 8, dar nu 8 este raspunsul ! Observam ca trebuie sa setam si primul
 bit care difera, astfel numarul ar deveni: 000...1100 = 12, astfel am ajuns la raspunul corect. Acest bit trebuie setat 
 intrucat el reprezinta poztia unde trebuie facut stanga (i.e desetat acest bit) sau dreapta (setam acest bit) pentru a ajunge
 la numere. 
+
 Astefl putem implementa formula:
 ```cpp
 //neat way of finding msb and lsb in C++ when using g++. 
