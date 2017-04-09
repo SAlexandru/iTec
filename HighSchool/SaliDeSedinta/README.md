@@ -20,7 +20,7 @@ De exemplu pentru datele de test:
 5 9
 5 10
 ```
-Imagina asociata acestor date este:
+Imaginea asociata acestor date este:
 ![Numbers on an axe](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/SaliDeSedinta/intervals.png)
 
 Acum raspunsul este destul de usor de observat, numarul maxim de intervale deschise la un moment dat este 5. 
