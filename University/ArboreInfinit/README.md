@@ -1,6 +1,6 @@
 ## Arbore Infinit
 
-# Regula de generare  
+### Regula de generare  
 
 Avand un element 2<sup>k</sup>, pe ramura stanga a acestuia vine elementul 2<sup>k</sup> - 2<sup>k-1</sup> = 2<sup>k-1</sup>, 
 iar pe cea dreapta 2<sup>k</sup> + 2<sup>k-1</sup>. 
@@ -9,14 +9,14 @@ Pe ramura stanga a 2<sup>k</sup> + 2<sup>k-1</sup> vine 2<sup>k</sup> + 2<sup>k-
 iar pe cea dreapta vine 2<sup>k</sup> + 2<sup>k-1</sup> + 2<sup>k-2</sup> s.a.m.d
 
 
-# Solutia lui Mihai:
+### Solutia lui Mihai:
 Consideram a, b numerele.
 Nivelul unui numar se considera prima pozitie care are bitul 1 setat (de la dreapta la stanga). 
 Primul pas e sa identificam pe ce nivel se afla fiecare dintre cele 2 numere si sa le aducem pe acelasi nivel 
 (transformarea copilului in parinte se face simplu adunand/scazand lsb-ul setat pe 1).   
 	Cat timp cele 2 nu coincid, a=a parinte(a); b=parinte(b).
   
-# Solutia lui Alex (formula):
+### Solutia lui Alex (formula):
 ```
 Basic bit operations:
 lsb(a) -- indexul pentru least significat bit (cel mai nesemnificativ bit)
