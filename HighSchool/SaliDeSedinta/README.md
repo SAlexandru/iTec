@@ -1,15 +1,27 @@
-## Sali de Meeting
+## Sali de Sedinta
 
 
 Aceasta problema poate fi reformulata: 
   > Se da un set de intervale [a, b], a < b. 
   > Se cere sa se determine numarul maxim de intervale deschise la un moment dat. 
   
-Un mod de a rezolva aceasta problema este de a "sparge" intervalul in doua componente a si b. In acelasi timp trebuie sa 
-marcam cumva "a" ca find partea de start a intervalului si "b" partea de end a intervalului.  Astfel din N intervale am creat
-2 * N numere. Acestea le putem sorta in ordine crescatoare. Daca avem doua numere identice, *numarul care reprezinta sfarsitul
-unui intervalului trebuie sa apara inainte de numarul, cu aceasi valoare, care reprezinta inceputul intervalului*.
-Dupa ce le-am sortat, putem sa ne plimba cu un contor care il incrementam cand dam peste un numar care reprezinta un interval
-deschis, si decrementam cand dam peste un numar care reprezinta un sfarsit de interval. Valoarea cea mai mare care este
-atina de contor este raspunsul de la problema. Valoarea cea mai mare reprezinta numarul maxim de interval care sunt deschise
-la un anumit punct in timp.
+Pentru a rezolva aceasta problema vom "insira" toate numerele pe axa numerelor reale si vom marca cu [ un numar de pe axa ce reprezinta inceputul unui interval si cu [ sfarsitul de interval.
+
+De exemplu pentru datele de test:
+```
+9
+1 5
+2 5
+3 5
+4 5
+5 6
+5 7
+5 8
+5 9
+5 10
+```
+Imagina asociata acestor date este:
+![Numbers on an axe](https://raw.githubusercontent.com/SAlexandru/iTec/master/HighSchool/SaliDeSedinta/intervals.png)
+
+Acum raspunsul este destul de usor de observat, numarul maxim de intervale deschise la un moment dat este 5. 
+Un lucru foarte important de observat (cel putin pentru implementare) este: daca la acelasi numar se deschid si inchid intervale trebuie **numarate prima data cate intervale se inchid, apoi sa se numere cate se deschid**
