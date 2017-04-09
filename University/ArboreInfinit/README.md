@@ -25,8 +25,8 @@ msb(a) -- indexul pentru most significat bit (cel mai semnificativ bit)
 a | b  -- sau pe biti:  a = 7 (000...0111) b = 8 (000...1000)  a | b = 15 = (000...1111)
 a & b  -- and pe biti:  a = 7 (000...0111) b = 8 (000...1000)  a & b = 0
 a ^ b  -- [xor](https://en.wikipedia.org/wiki/Exclusive_or) pe biti a = 15 (000...1111) b = 7 (000...0111) a ^ b = 8 (000...1000)
-1 << b --  2<sup>b</sup>    (cazul general a << b 2<sup>b</sup> * a)
-b >> 1 --  b / 2  (cazul general b >> a:  a / 2<sup>b</sup>)
+1 << b --  2^b    (cazul general a << b 2^b * a)
+b >> 1 --  b / 2  (cazul general b >> a:  a / 2^b )
 Numarul (1 << b) - 1 are toti biti de la 0 pana la b - 1 setati 
 ```
 Avem numerele a si b pentru care trebuie sa calculam lca(a, b).
