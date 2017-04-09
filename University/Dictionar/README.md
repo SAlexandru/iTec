@@ -31,10 +31,11 @@ Avem muchii intre:
  ```
  
  Poza pentru graful de mai sus ar fi:
+ 
  ![graf cu 4 noduri si 4 muchi, un graf stea](https://raw.githubusercontent.com/SAlexandru/iTec/master/University/Dictionar/tests/photosOfTheGraphs/input1.png)
 
 In folderul [tests/photosOfTheGraphs](https://github.com/SAlexandru/iTec/tree/master/University/Dictionar/tests/photosOfTheGraphs) 
 gasiti pozele grafurilor care au fost date ca si teste :) Aceste poze au fost generate folosind [graphviz](http://www.graphviz.org/)
 in care se poate da un fisier care descrie nodurile si muchiile din graf. Fisierul trebuie scris in limbajul [dot](http://www.graphviz.org/content/dot-language). 
 Pentru testele noastre fisierele .dot se gasesc in in folderul test/dotFiles.
-Pentru a genera o imagine dintr-un fisier dot puteti folosi comanda dot -Tpng <nume fisier>.dot -o <num imagine>.png
+Pentru a genera o imagine dintr-un fisier dot puteti folosi comanda ```dot -Tpng <nume fisier>.dot -o <num imagine>.png```
