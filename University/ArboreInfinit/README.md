@@ -51,7 +51,7 @@ int lsb(int x) {return __builtin_ctz(x); }
 
 int max(int x, int y) {return x > y ? x : y;}
 
-int **almostOKLCA**(int x, int y) {
+int almostOKLCA(int x, int y) {
     if (x == y) return x;
    
     int idx = msb(x ^ y); // x ^ y ne da toti biti care difera de la x si la y, iar msb(x ^ y) ne da primul numar care difera, de la stanga la dreapta
