@@ -3,7 +3,6 @@
 
 Aceasta problema poate fi reformulata: 
   > Se da un set de intervale [a, b], a < b. 
-  >
   > Se cere sa se determine numarul maxim de intervale deschise la un moment dat. 
   
 Pentru a rezolva aceasta problema vom "insira" toate numerele pe axa numerelor reale si vom marca cu [ un numar de pe axa ce reprezinta inceputul unui interval si cu [ sfarsitul de interval.
